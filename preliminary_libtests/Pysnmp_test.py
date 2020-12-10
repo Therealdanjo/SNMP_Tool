@@ -20,6 +20,3 @@ def search_in_list():  # Basic Function that gets and prints multiple values fro
 
 
 search_in_list()
-
-
-

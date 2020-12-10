@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danjo's SNMPTool Help</title>
+</head>
+<body>
+    <h1>Welcome to the SNMPTool help!</h1>
+    <p>If you need help with any of the commands, or have problems, you've come to the right place! <br></p>
+    <h2>Overview of the commands:</h2>
+    <ul>
+        <li>/help</li>
+        <li>/basicinfo</li>
+        <li>/get</li>
+        <li>/set</li>
+    </ul>
+
+    <h2>The Command "/help"</h2>
+    <p>If you type "/help" you will be redirected to this page to get help with any problem and/or question you might have</p>
+
+    <h2>The Command "/basicinfo"</h2>
+    <p>If you use the Command "/basicinfo", the following basic information about the IP you will enter are going to be printed<br></p>
+    <ul>Printed information:
+        <li>sysName: The name of the scanned Computer</li>
+        <li>sysContact: The contact person for the scanned Computer</li>
+        <li>sysLocation: Location in which the scanned Computer is located</li>
+        <li>sysDescr: The description of the scanned Computer</li>
+        <li>sysUptime: Prints the uptime of the scanned Computer in the format: hh:mm:ss</li>
+        <li>sysServices: Prints the number of available services in the scanned Computer</li>
+    </ul>
+    <p style="color: red; font-weight: bold">Warning!<br>This function only works if the scanned system supports the "SNMPv2-MIB", because the information is gathered from this MIB!</p>
+
+    <h2>The Command "/get"</h2>
+    <p>This command is used to get the value from a MIB</p>
+    <p style="color: red; font-weight: bold">Warning!<br>When you are prompted to enter the path to your MIB, you have to prepend "file:///" to the path of your MIB<br>
+    Also, the only supported MIBs (for now) are the precompiled ones that you can find <a href="https://github.com/etingof/pysnmp-mibs">here</a><br>
+    If you want to use the Default MIBs recognized by pysnmp (ex. SNMPv2-MIB) you do not have to enter the path, only the name of the MIB you want to use</p>
+
+    <h2>The Command "/set"</h2>
+    <p>This command is used to set the value of a remote system. It also calls for the MIB path like the command "/get"; if you need help with that, just read it in the other section ;)</p>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body {
+            font-family: Poppins, serif;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</body>
+</html>
