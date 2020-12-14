@@ -1,5 +1,7 @@
+import os
+import webbrowser
 from datetime import timedelta
-import webbrowser, os
+
 
 def parseuptime(uptime):
     seconds = int(uptime) / 100
