@@ -84,6 +84,7 @@ class Ui_MainWindow(object):
         self.basicinfoButton.clicked.connect(self.basicinfo)
         self.getButton.clicked.connect(self.get)
         self.setButton.clicked.connect(self.set)
+        self.helpButton.clicked.connect(self.help)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -165,3 +166,7 @@ class Ui_MainWindow(object):
             else:
                 self.reslbl.setText('Sorry, you have to enter every required field in order to get a new value for an '
                                     'element!')
+
+    @pyqtSlot()
+    def help(self):
+        openhelp()
