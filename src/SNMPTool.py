@@ -10,13 +10,15 @@ while True:
         print('Please input the IP you want to scan:')
         ip = input()
         print('***Results***')
-        basic_scan(ip)
+        print(basic_scan(ip))
         print('********')
     if cmd == '/get':
         print('Please input your IP:')
         ip = input()
+        print('Please enter the community name:')
+        community = input()
         print('Please enter the path to your MIB:')
-        mibaddr = input()
+        mibaddr = 'file:///' + input()
         print('Please enter the OID:')
         oid = input()
 
@@ -24,8 +26,8 @@ while True:
         mibname = tempname[-1]
 
         print('***Result***')
-        if not checkemptystrings(ip, mibname, mibaddr, oid):
-            print(get(ip, mibname, mibaddr, oid))
+        if not checkemptystrings(community, ip, mibname, mibaddr, oid):
+            print(get(community, ip, mibname, mibaddr, oid))
         else:
             print('Sorry, you have to enter every required field in order to get an element.\nPlease try again!')
         print('********')

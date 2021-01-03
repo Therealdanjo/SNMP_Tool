@@ -1,4 +1,3 @@
-import os
 import webbrowser
 from datetime import timedelta
 
@@ -16,4 +15,4 @@ def checkemptystrings(*args):
 
 
 def openhelp():
-    webbrowser.open('file://' + os.path.realpath('SNMPToolHelp.html'))
+    webbrowser.open()
