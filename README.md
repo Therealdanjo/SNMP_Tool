@@ -30,4 +30,4 @@ The console-based Tool has the following functionality:
 * Eventually add the support for Traps or Informs
 * ~~Adding logic to the GUI (includes rewriting parts of some functions)~~
 * ~~Expanding the help page, so that it has help for both the console and GUI-version of the program~~
-* ~~Eventually scanning a network for available devices via SNMP ~~
+* ~~Eventually scanning a network for available devices via SNMP~~
