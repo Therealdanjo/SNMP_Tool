@@ -25,6 +25,6 @@ The console-based Tool has the following functionality:
 ## Next Steps
 * ~~Adding logic to the GUI (includes rewriting parts of some functions)~~
 * Eventually make the GUI prettier (ex. add a logo, modern design)
-* Expanding the help page, so that it has help for both the console and GUI-version of the program 
+* ~~Expanding the help page, so that it has help for both the console and GUI-version of the program~~
 * Eventually scanning a network for available devices via SNMP 
 * Eventually add the support for Traps or Informs
