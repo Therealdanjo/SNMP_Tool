@@ -1,5 +1,7 @@
 from SNMPEngine import *
 
+print(scan('10.10.30.0', '24'))
+
 print('Hi, welcome to the SNMPTool!\nIf you need help, type /help\nTo quit, type /quit')
 while True:
     cmd = input()
