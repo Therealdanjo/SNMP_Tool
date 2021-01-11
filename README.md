@@ -23,8 +23,11 @@ The console-based Tool has the following functionality:
 ![alt text](https://github.com/Therealdanjo/SNMP_Tool/blob/master/img/GUI20201217.jpg "GUI updated on 2020-12-17")
 
 ## Next Steps
-* ~~Adding logic to the GUI (includes rewriting parts of some functions)~~
+* Add the network-scan-command to the command-line Tool
+* Add "network Scan"-button to the GUI and bind the logic with it
+* Expand the help page, so that it contains Help for the Network Scan functionality
 * Eventually make the GUI prettier (ex. add a logo, modern design)
-* ~~Expanding the help page, so that it has help for both the console and GUI-version of the program~~
-* Eventually scanning a network for available devices via SNMP 
 * Eventually add the support for Traps or Informs
+* ~~Adding logic to the GUI (includes rewriting parts of some functions)~~
+* ~~Expanding the help page, so that it has help for both the console and GUI-version of the program~~
+* ~~Eventually scanning a network for available devices via SNMP ~~
