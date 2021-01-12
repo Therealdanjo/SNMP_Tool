@@ -1,5 +1,6 @@
 import sys
 from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QApplication
 
 from MainWindow import Ui_MainWindow
 
@@ -10,8 +11,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
 
-app = QtWidgets.QApplication(sys.argv)
-
+app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec()

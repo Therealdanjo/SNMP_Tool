@@ -10,13 +10,13 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSlot
+
 from SNMPEngine import *
-from utilities import *
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("Danjo's SNMP Tool")
+        MainWindow.setObjectName("Danjo's SNMPTool")
         MainWindow.resize(705, 505)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -25,9 +25,6 @@ class Ui_MainWindow(object):
         self.mibentry = QtWidgets.QLineEdit(self.centralwidget)
         self.mibentry.setObjectName("mibentry")
         self.gridLayout.addWidget(self.mibentry, 0, 3, 1, 1)
-        self.setButton = QtWidgets.QPushButton(self.centralwidget)
-        self.setButton.setObjectName("setButton")
-        self.gridLayout.addWidget(self.setButton, 3, 3, 1, 1)
         self.valentry = QtWidgets.QLineEdit(self.centralwidget)
         self.valentry.setObjectName("valentry")
         self.gridLayout.addWidget(self.valentry, 2, 1, 1, 1)
@@ -46,9 +43,6 @@ class Ui_MainWindow(object):
         self.comentry = QtWidgets.QLineEdit(self.centralwidget)
         self.comentry.setObjectName("comentry")
         self.gridLayout.addWidget(self.comentry, 1, 1, 1, 1)
-        self.basicinfoButton = QtWidgets.QPushButton(self.centralwidget)
-        self.basicinfoButton.setObjectName("basicinfoButton")
-        self.gridLayout.addWidget(self.basicinfoButton, 3, 1, 1, 1)
         self.vallbl = QtWidgets.QLabel(self.centralwidget)
         self.vallbl.setObjectName("vallbl")
         self.gridLayout.addWidget(self.vallbl, 2, 0, 1, 1)
@@ -61,9 +55,6 @@ class Ui_MainWindow(object):
         self.oidentry = QtWidgets.QLineEdit(self.centralwidget)
         self.oidentry.setObjectName("oidentry")
         self.gridLayout.addWidget(self.oidentry, 1, 3, 1, 1)
-        self.getButton = QtWidgets.QPushButton(self.centralwidget)
-        self.getButton.setObjectName("getButton")
-        self.gridLayout.addWidget(self.getButton, 3, 2, 1, 1)
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
@@ -74,33 +65,48 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.reslbl = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.reslbl.setText("")
-        self.reslbl.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.reslbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.reslbl.setObjectName("reslbl")
         self.horizontalLayout.addWidget(self.reslbl)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout.addWidget(self.scrollArea, 4, 0, 1, 4)
+        self.basicinfoButton = QtWidgets.QPushButton(self.centralwidget)
+        self.basicinfoButton.setObjectName("basicinfoButton")
+        self.gridLayout.addWidget(self.basicinfoButton, 3, 0, 1, 1)
+        self.getButton = QtWidgets.QPushButton(self.centralwidget)
+        self.getButton.setObjectName("getButton")
+        self.gridLayout.addWidget(self.getButton, 3, 1, 1, 1)
+        self.setButton = QtWidgets.QPushButton(self.centralwidget)
+        self.setButton.setObjectName("setButton")
+        self.gridLayout.addWidget(self.setButton, 3, 2, 1, 1)
+        self.netscanButton = QtWidgets.QPushButton(self.centralwidget)
+        self.netscanButton.setObjectName("netscanButton")
+        self.gridLayout.addWidget(self.netscanButton, 3, 3, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.basicinfoButton.clicked.connect(self.basicinfo)
         self.getButton.clicked.connect(self.get)
         self.setButton.clicked.connect(self.set)
         self.helpButton.clicked.connect(self.help)
+        self.netscanButton.clicked.connect(self.scan)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("Danjo's SNMP Tool", "Danjo's SNMP Tool"))
-        self.setButton.setText(_translate("Danjo's SNMP Tool", "SET"))
-        self.helpButton.setText(_translate("Danjo's SNMP Tool", "Help"))
-        self.iplbl.setText(_translate("Danjo's SNMP Tool", "IP Address:"))
-        self.miblbl.setText(_translate("Danjo's SNMP Tool", "MIB Path"))
-        self.comlbl.setText(_translate("Danjo's SNMP Tool", "Community"))
-        self.basicinfoButton.setText(_translate("Danjo's SNMP Tool", "Get Basic info"))
-        self.vallbl.setText(_translate("Danjo's SNMP Tool", "New Value"))
-        self.oidlbl.setText(_translate("Danjo's SNMP Tool", "OID"))
-        self.getButton.setText(_translate("Danjo's SNMP Tool", "GET"))
+        MainWindow.setWindowTitle(_translate("Danjo's SNMPTool", "Danjo's SNMPTool"))
+        self.helpButton.setText(_translate("Danjo's SNMPTool", "Help"))
+        self.iplbl.setText(_translate("Danjo's SNMPTool", "IP Address:"))
+        self.miblbl.setText(_translate("Danjo's SNMPTool", "MIB Path"))
+        self.comlbl.setText(_translate("Danjo's SNMPTool", "Community"))
+        self.vallbl.setText(_translate("Danjo's SNMPTool", "New Value"))
+        self.oidlbl.setText(_translate("Danjo's SNMPTool", "OID"))
+        self.basicinfoButton.setText(_translate("Danjo's SNMPTool", "Get Basic info"))
+        self.getButton.setText(_translate("Danjo's SNMPTool", "GET"))
+        self.setButton.setText(_translate("Danjo's SNMPTool", "SET"))
+        self.netscanButton.setText(_translate("Danjo's SNMPTool", "Netwok Scan"))
+        self.setWindowIcon(QtGui.QIcon('icon.png'))
 
     @pyqtSlot()
     def basicinfo(self):
@@ -170,3 +176,24 @@ class Ui_MainWindow(object):
     @pyqtSlot()
     def help(self):
         openhelp()
+
+    @pyqtSlot()
+    def scan(self):
+        content = self.reslbl.text()
+        entry = self.ipentry.text()
+        params = entry.split('/')
+        res = scan(params[0], params[1])
+
+        if content != '':
+            self.reslbl.setText(content + 'Started network scan on Network:' + params[0])
+        else:
+            self.reslbl.setText('Started network scan on Network:' + params[0])
+
+        formatted = 'Available Devices:\n'
+        for i in res:
+            formatted += i + '\n'
+        if content != '':
+            formatted = formatted[:-1]  # Removes last \n
+            self.reslbl.setText(content + formatted)
+        else:
+            self.reslbl.setText(formatted)

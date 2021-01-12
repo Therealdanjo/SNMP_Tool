@@ -5,6 +5,7 @@
     <title>Danjo's SNMPTool Help</title>
 </head>
 <body>
+    <img src="logo.png" id="logo">
     <h1>Welcome to the SNMPTool help!</h1>
     <p>If you need help with any of the commands, or have problems, you've come to the right place!<br></p>
     <h2>The command line tool</h2>
@@ -54,11 +55,20 @@
     <p style="color: red; font-weight: bold">Warning!<br>The only supported MIBs (for now) are the precompiled ones that you can find <a href="https://github.com/etingof/pysnmp-mibs">here</a><br>
     If you want to use the Default MIBs recognized by pysnmp (ex. SNMPv2-MIB) you do not have to enter the path, only the name of the MIB you want to use</p>
 
+    <h3>The Command "/scan"</h3>
+    <p>This command performs a network scan for available SNMP devices.</p>
+    <ul>Required information
+        <li>IP address: The Address of the network you want to scan(ex. 192.168.1.0). You can also enter a host instead, but it will still perform a complete scan according to the subnet mask</li>
+        <li>Subnet mask: The Subnet mask of the network you want to scan without the '/' ('/24'= ❌; '24'= ✔️)</li>
+    </ul>
+    <p>Supported subnet masks are: /30 /29 /28 /27 /26 /25 /24 /23 /22 /21 /20 /19 /18 /17 /16</p>
+    <p style="color: red; font-weight: bold">Warning!<br>This function only works if the scanned system supports the "SNMPv2-MIB"!<br>
+    Since this function is basically a loop which iterates every address and sends a GET-Request, it could take very long on larger subnets (~20 min. for a /24 net, If many devices support SNMP and are connected it takes less)</p>
     <hr>
 
     <h2>The GUI Tool</h2>
-    <h3>The GUI (updated 2021/01/04)</h3>
-    <img src="snmpToolGUI.jpg">
+    <h3>The GUI (updated 2021/01/12)</h3>
+    <img src="snmpToolGUI.png">
     <ul>
         <li>Input area: Place to enter every required information</li>
         <li>Controls area: Where you select what you are going to do with the entered information</li>
@@ -100,6 +110,15 @@
     <p style="color: red; font-weight: bold">Warning!<br>The only supported MIBs (for now) are the precompiled ones that you can find <a href="https://github.com/etingof/pysnmp-mibs">here</a><br>
     If you want to use the Default MIBs recognized by pysnmp (ex. SNMPv2-MIB) you do not have to enter the path, only the name of the MIB you want to use</p>
 
+    <h3>The Button "Network Scan"</h3>
+    <p>This button is analogue to the "/scan" command. It performs a network scan over the specified network and its subnet.</p>
+    <ul>Required information
+        <li>IP address and Subnet: The Address of the network you want to scan and the subnet (ex. 192.168.1.0/24). You can also enter a host instead, but it will still perform a complete scan according to the subnet mask</li>
+    </ul>
+    <p>Supported subnet masks are: /30 /29 /28 /27 /26 /25 /24 /23 /22 /21 /20 /19 /18 /17 /16</p>
+    <p style="color: red; font-weight: bold">Warning!<br>This function only works if the scanned system supports the "SNMPv2-MIB"!<br>
+    Since this function is basically a loop which iterates every address and sends a GET-Request, it could take very long on larger subnets (~20 min. for a /24 net, If many devices support SNMP and are connected it takes less)</p>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
         body {
@@ -116,6 +135,12 @@
         }
         body::-webkit-scrollbar {
         display: none;
+        }
+        #logo {
+            width: 10%;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
     </style>
 </body>

@@ -15,4 +15,4 @@ def checkemptystrings(*args):
 
 
 def openhelp():
-    webbrowser.open('https://therealdanjo.github.io/SNMP_Tool/docs/SNMPToolHelp.html')
+    webbrowser.open('https://therealdanjo.github.io/SNMP_Tool/SNMPToolHelp.html')
