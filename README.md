@@ -3,7 +3,7 @@ This is a basic SNMPv2 tool to perform get/set operations
 ## Installation
 * To use the console version of this tool (which is the only one who works at the time of writing this), make sure you have [pysnmp](https://github.com/etingof/pysnmp) installed. To use additional features, you also need to install [pysnmp-mibs](https://github.com/etingof/pysnmp-mibs) 
 * After you did all of the above, just download all files in the *src* folder, execute *SNMPTool.py* and enjoy!
-* To use the GUI version of this tool, you need to have PyQt5 installed on top of [pysnmp](https://github.com/etingof/pysnmp) and (optionally) [pysnmp-mibs](https://github.com/etingof/pysnmp-mibs). Then, download all files in the *src* folder and execute *SNMPToolGUI.py*
+* To use the GUI version of this tool, you need to have [PyQt5](https://pypi.org/project/PyQt5/) installed on top of [pysnmp](https://github.com/etingof/pysnmp) and (optionally) [pysnmp-mibs](https://github.com/etingof/pysnmp-mibs). Then, download all files in the *src* folder and execute *SNMPToolGUI.py*
 
 *For more detailed information about every command in the console-based version, type /help when you execute the program!*
 
@@ -20,14 +20,14 @@ The console-based Tool has the following functionality:
 
 ## The GUI
 **Warning**: The GUI currently has no logic bound to it (see *Next Steps*)
-![alt text](https://github.com/Therealdanjo/SNMP_Tool/blob/master/img/GUI20201217.jpg "GUI updated on 2020-12-17")
+![alt text](https://github.com/Therealdanjo/SNMP_Tool/blob/master/img/GUI20210112.png "GUI updated on 2020-01-12")
 
 ## Next Steps
-* Add the network-scan-command to the command-line Tool
-* Add "network Scan"-button to the GUI and bind the logic with it
-* Expand the help page, so that it contains Help for the Network Scan functionality
-* Eventually make the GUI prettier (ex. add a logo, modern design)
+* Eventually make the GUI prettier (ex. ~~add a logo~~, modern design)
 * Eventually add the support for Traps or Informs
 * ~~Adding logic to the GUI (includes rewriting parts of some functions)~~
 * ~~Expanding the help page, so that it has help for both the console and GUI-version of the program~~
 * ~~Eventually scanning a network for available devices via SNMP~~
+* ~~Add the network-scan-command to the command-line Tool~~
+* ~~Add "network Scan"-button to the GUI and bind the logic with it~~
+* ~~Expand the help page, so that it contains Help for the Network Scan functionality~~
