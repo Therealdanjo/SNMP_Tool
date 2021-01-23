@@ -19,7 +19,6 @@ The console-based Tool has the following functionality:
 * Perform SET-operations on the same MIBs as the ones supported on GET-requests, and, like GET-requests, it supports all communities
 
 ## The GUI
-**Warning**: The GUI currently has no logic bound to it (see *Next Steps*)
 ![alt text](https://github.com/Therealdanjo/SNMP_Tool/blob/master/img/GUI20210112.png "GUI updated on 2020-01-12")
 
 ## Next Steps
